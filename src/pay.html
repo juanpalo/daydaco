@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Trucker Tracker</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<div id="error-message"></div>
+
+<script>
+
+     var stripe = Stripe('pk_test_KFuKDO7ayBQ3tw9nsQAYGls5');
+      stripe.redirectToCheckout({
+      items: [{plan: 'plan_FT4QG4PseZx1QA', quantity: 1}],
+      successUrl: window.location.protocol + '//truckproject-b9adc.firebaseapp.com/sgagadfawerqequfadfasfdftrutruyrtyuryutycckhgjkhkghjkghkhgbcxvbbxcvvkhjkess.html',
+      cancelUrl: window.location.protocol + '//truckproject-b9adc.firebaseapp.com',
+      })
+   .then(function (result) {
+     if (result.success) {
+          console.log('success pay');
+      }
+   });
+</script>
+</body>
+</html> 
+<!--  -->

@@ -1,0 +1,10 @@
+
+<p class="Center">{{userName}} on going jobs</p>
+    <ul>
+        <li *ngFor="let item of contractorsWithJobBlock "> 
+                <a [routerLink]="['/StageOne',userId,item.contractor,item.jobId]">
+                    {{item.contractor}},
+                    {{item.jobId}}
+                </a>
+    </li>
+  </ul>

@@ -1,0 +1,27 @@
+<p class="Center">{{companyName}} received jobs</p>
+    <ul>
+        <li *ngFor="let item of contractorsWithJobBlock "> 
+
+                <a [routerLink]="['/JobConfirm',item.contractor,item.jobId,companyName]">
+                    {{item.contractor}},
+                    {{item.jobId}},
+                    {{item.jobCount}}
+                </a>
+           
+           <!--  <div *ngFor="let i of item.jobList">
+                <div *ngIf="i">
+                    <a [routerLink]="['/JobConfirm',item.contractor,i,companyName]">
+                        {{i}}
+                    </a>
+                </div>
+               
+            </div> -->
+    </li>
+  </ul>
+
+  <div class="Center">
+            <a [routerLink]="['/Ongoing']">
+            <button>Jobs you are working on.</button>
+            </a>
+        
+    </div>

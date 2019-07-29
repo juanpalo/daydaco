@@ -1,0 +1,99 @@
+
+<div class="Center">{{title}} Sign Up Page</div>
+
+<div>  &nbsp;</div>
+<div *ngIf="!truckerDiv">  
+<form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+     
+        <div class="Center">
+          <label for="CompanyName">
+            Company Name: 
+          </label>
+          <input id="CompanyName"   type="text" formControlName="CompanyName"  required>
+        </div>
+       
+        <div class="Center">
+          <label for="DispatcherName">
+            Dispatcher Name:
+          </label>
+          <input id="DispatcherName"  type="text" formControlName="DispatcherName" required>
+        </div>
+       
+        <div class="Center">
+                <label for="CompanyPhone">
+                    Company Phone:
+                </label>
+                <input id="CompanyPhone"  type="number" formControlName="CompanyPhone" required>
+              </div>
+
+              <div class="Center">
+                    <label for="CompanyEmail">
+                        Company Email:
+                    </label>
+                    <input id="CompanyEmail"  type="email" formControlName="CompanyEmail" required>
+                  </div>
+
+                  <div class="Center">
+                        <label for="CompanyAddress">
+                            Company Address:
+                        </label>
+                        <textarea id="CompanyAddress"  type="text" formControlName="CompanyAddress" required>
+                        </textarea>
+                      </div>
+      
+
+        <div class="Center">
+          <button class="button " type="submit">Submit</button>
+         </div>
+        </form>
+      </div>
+<!--driver-->
+    <div *ngIf="truckerDiv">
+      <form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+ 
+    <div class="Center">
+        <label for="DriverName">
+            Driver Name:
+        </label>
+
+
+        <input id="DriverName"  type="text" formControlName="DriverName" required>
+      </div>
+
+      <div class="Center">
+            <label for="Employer">
+                Employer:
+            </label>
+            <input id="Employer"  type="text" formControlName="Employer" required>
+          </div>
+
+          <div class="Center">
+                <label for="Phone">
+                    Phone:
+                </label>
+                <input id="Phone"  type="number" formControlName="Phone" required>
+              </div>
+
+              <div class="Center">
+                    <label for="Email">
+                        Email:
+                    </label>
+                    <input id="Email"  type="email" formControlName="Email" required>
+                  </div>
+
+                    <div class="Center">
+                        <label for="Address">
+                            Address:
+                        </label>
+                        <textarea   id="Address"  type="text" formControlName="Address" required>
+                        </textarea>
+                      </div>
+                      
+    
+
+        <div class="Center">
+        <button class="button " type="submit">Submit</button>
+       </div>
+      </form>
+      
+    </div>

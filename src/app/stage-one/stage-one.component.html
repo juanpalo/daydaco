@@ -1,0 +1,531 @@
+<!--if load size greater than 0 hide this button-->
+<button (click)="giveUp()">give up</button>
+
+<!--jobs informations-->
+<div class="Center">
+        <h2>Job Details</h2>
+        </div>
+        <div class="Center">
+        <table>
+          <tr >
+            <td>Driver:</td>
+            <td>{{name}}</td>
+          </tr>
+          <tr>
+            <td>Arrive at:</td>
+            <td>{{info.ArriveAt}}</td>
+          </tr>
+          <tr>
+            <td>Arrive time:</td>
+            <td>{{info.ArriveTime}},{{info.JobDate}}</td>
+          </tr>
+          <tr>
+            <td>Job:</td>
+            <td>{{info.Job}}</td>
+          </tr>
+          <tr>
+            <td>Foreman:</td>
+            <td>{{info.Foreman}}</td>
+          </tr>
+          <tr>
+            <td>Destination:</td>
+            <td>{{info.Destination}}</td>
+          </tr>
+          <tr>
+            <td>Job ID:</td>
+            <td>{{jobId}}</td>
+          </tr>
+          <tr>
+            <td>Contractor:</td>
+            <td>{{contractor}}</td>
+          </tr>
+          <tr>
+            <td>Broker:</td>
+            <td>{{companyName}}</td>
+          </tr>
+          <tr>
+            <td>OwnerOp:</td>
+            <td>{{companyName}}</td>
+          </tr>
+        </table>
+        </div>
+        
+<!--load form-->
+<div>&nbsp;</div>
+<form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+     
+        <div class="Center">
+          <label for="TruckNo">
+            TruckNo: 
+          </label>
+         
+          <input id="TruckNo"   type="text" formControlName="TruckNo" >
+         
+        </div>
+
+        <div class="Center">
+          <label for="LicPlate">
+            Lic. Plate: 
+          </label>
+          <input id="LicPlate"   type="text" formControlName="LicPlate" >
+        </div>
+
+        <div class="Center">
+          <label for="TruckType">
+            TruckType: 
+          </label>
+          <input id="TruckType"   type="text" formControlName="TruckType" >
+        </div>
+
+    <div>&nbsp;</div>
+
+          <div class="Center">
+          <button class="button "  type="submit">Update</button>
+          </div>
+          <div>&nbsp;</div>
+
+          <div class="Center">
+
+            <button class="button " (click)="BeginShift()">Begin Shift</button>
+            </div>
+
+</form>
+
+
+
+<div>&nbsp;</div>
+<form  [formGroup]="arriveForm" (ngSubmit)="onSubmit(arriveForm.value)">
+
+    <div class="Center">
+        <label for="ArriveAtSite">
+            Arrive At Site: 
+        </label>
+       
+        <input id="ArriveAtSite"   type="text" formControlName="ArriveAtSite" >
+       
+      </div>
+
+    </form> 
+
+  <div>&nbsp;</div>
+
+  <div class="Center">Loading and Unloading</div>
+
+ 
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="1"> 
+        <form  [formGroup]="loadForm" (ngSubmit)="onSubmit(loadForm.value)">
+      
+            <div class="Center">
+                <label for="ScaleTagID">
+                    Scale Tag ID: 
+                </label>
+               
+                <input id="ScaleTagID"   type="text" formControlName="ScaleTagID" >
+               
+              </div>
+      
+            <div class="Center">
+                <label for="Weight">
+                    Weight: 
+                </label>
+               
+                <input id="Weight"   type="text" formControlName="Weight" >
+               
+              </div>
+        
+              <div class="Center">
+                  <label for="Material">
+                      Material: 
+                  </label>
+                 
+                  <input id="Material"   type="text" formControlName="Material" >
+                 
+                </div>
+      
+                <div class="Center">
+                    <label for="TimeArive">
+                        Time Arrive: 
+                    </label>
+                    <label for="TimeDepart">
+                        Time Depart: 
+                    </label>
+                  </div>
+      
+                  <div class="Center">
+                      <label for="Loading">
+                          Loading: 
+                      </label>
+                     
+                      <input id="LoadStart" style="width: 100px" type="text" formControlName="LoadStart" >
+                     
+                      <input id="LoadEnd" style="width: 100px" type="text" formControlName="LoadEnd" >
+                     
+                    </div>
+      
+                    <div class="Center">
+                        <label for="Unloading">
+                            Unloading: 
+                        </label>
+                       
+                        <input id="UnloadStart" style="width: 100px" type="text" formControlName="UnloadStart" >
+                        <input id="UnloadEnd" style="width: 100px"  type="text" formControlName="UnloadEnd" >
+                       
+                      </div>
+      
+                      <div class="Center">
+                          <button class="button " type="submit">Update</button>
+                          </div>
+                          <div>&nbsp;</div>
+      
+                      <div class="Center">
+      
+                
+                          
+                          <button class="button" (click)="EndShift()">End Shift</button>
+                          
+                          </div>
+                          <div>&nbsp;</div>
+                  </form> 
+       </mat-tab>
+      <mat-tab label="2">
+        <form  [formGroup]="loadForm" (ngSubmit)="onSubmit(loadForm.value)">
+      
+            <div class="Center">
+                <label for="ScaleTagID">
+                    Scale Tag ID: 
+                </label>
+               
+                <input id="ScaleTagID"   type="text" formControlName="ScaleTagID" >
+               
+              </div>
+      
+            <div class="Center">
+                <label for="Weight">
+                    Weight: 
+                </label>
+               
+                <input id="Weight"   type="text" formControlName="Weight" >
+               
+              </div>
+        
+              <div class="Center">
+                  <label for="Material">
+                      Material: 
+                  </label>
+                 
+                  <input id="Material"   type="text" formControlName="Material" >
+                 
+                </div>
+      
+                <div class="Center">
+                    <label for="TimeArive">
+                        Time Arrive: 
+                    </label>
+                    <label for="TimeDepart">
+                        Time Depart: 
+                    </label>
+                  </div>
+      
+                  <div class="Center">
+                      <label for="Loading">
+                          Loading: 
+                      </label>
+                     
+                      <input id="LoadStart" style="width: 100px" type="text" formControlName="LoadStart" >
+                     
+                      <input id="LoadEnd" style="width: 100px" type="text" formControlName="LoadEnd" >
+                     
+                    </div>
+      
+                    <div class="Center">
+                        <label for="Unloading">
+                            Unloading: 
+                        </label>
+                       
+                        <input id="UnloadStart" style="width: 100px" type="text" formControlName="UnloadStart" >
+                        <input id="UnloadEnd" style="width: 100px"  type="text" formControlName="UnloadEnd" >
+                       
+                      </div>
+      
+                      <div class="Center">
+                          <button class="button " type="submit">Update</button>
+                          </div>
+                          <div>&nbsp;</div>
+      
+                      <div class="Center">
+      
+                         
+                         
+                          &nbsp;&nbsp;
+                          
+                          <button class="button" (click)="EndShift()">End Shift</button>
+                          
+                          </div>
+                          <div>&nbsp;</div>
+                  </form> 
+       </mat-tab>
+      <mat-tab label="3"> 
+        <form  [formGroup]="loadForm" (ngSubmit)="onSubmit(loadForm.value)">
+      
+            <div class="Center">
+                <label for="ScaleTagID">
+                    Scale Tag ID: 
+                </label>
+               
+                <input id="ScaleTagID"   type="text" formControlName="ScaleTagID" >
+               
+              </div>
+      
+            <div class="Center">
+                <label for="Weight">
+                    Weight: 
+                </label>
+               
+                <input id="Weight"   type="text" formControlName="Weight" >
+               
+              </div>
+        
+              <div class="Center">
+                  <label for="Material">
+                      Material: 
+                  </label>
+                 
+                  <input id="Material"   type="text" formControlName="Material" >
+                 
+                </div>
+      
+                <div class="Center">
+                    <label for="TimeArive">
+                        Time Arrive: 
+                    </label>
+                    <label for="TimeDepart">
+                        Time Depart: 
+                    </label>
+                  </div>
+      
+                  <div class="Center">
+                      <label for="Loading">
+                          Loading: 
+                      </label>
+                     
+                      <input id="LoadStart" style="width: 100px" type="text" formControlName="LoadStart" >
+                     
+                      <input id="LoadEnd" style="width: 100px" type="text" formControlName="LoadEnd" >
+                     
+                    </div>
+      
+                    <div class="Center">
+                        <label for="Unloading">
+                            Unloading: 
+                        </label>
+                       
+                        <input id="UnloadStart" style="width: 100px" type="text" formControlName="UnloadStart" >
+                        <input id="UnloadEnd" style="width: 100px"  type="text" formControlName="UnloadEnd" >
+                       
+                      </div>
+      
+                      <div class="Center">
+                          <button class="button " type="submit">Update</button>
+                          </div>
+                          <div>&nbsp;</div>
+      
+                      <div class="Center">
+      
+                         
+                         
+                          &nbsp;&nbsp;
+                          
+                          <button class="button" (click)="EndShift()">End Shift</button>
+                          
+                          </div>
+                          <div>&nbsp;</div>
+                  </form> 
+       </mat-tab>
+       <mat-tab label="4"> 
+        <form  [formGroup]="loadForm" (ngSubmit)="onSubmit(loadForm.value)">
+      
+            <div class="Center">
+                <label for="ScaleTagID">
+                    Scale Tag ID: 
+                </label>
+               
+                <input id="ScaleTagID"   type="text" formControlName="ScaleTagID" >
+               
+              </div>
+      
+            <div class="Center">
+                <label for="Weight">
+                    Weight: 
+                </label>
+               
+                <input id="Weight"   type="text" formControlName="Weight" >
+               
+              </div>
+        
+              <div class="Center">
+                  <label for="Material">
+                      Material: 
+                  </label>
+                 
+                  <input id="Material"   type="text" formControlName="Material" >
+                 
+                </div>
+      
+                <div class="Center">
+                    <label for="TimeArive">
+                        Time Arrive: 
+                    </label>
+                    <label for="TimeDepart">
+                        Time Depart: 
+                    </label>
+                  </div>
+      
+                  <div class="Center">
+                      <label for="Loading">
+                          Loading: 
+                      </label>
+                     
+                      <input id="LoadStart" style="width: 100px" type="text" formControlName="LoadStart" >
+                     
+                      <input id="LoadEnd" style="width: 100px" type="text" formControlName="LoadEnd" >
+                     
+                    </div>
+      
+                    <div class="Center">
+                        <label for="Unloading">
+                            Unloading: 
+                        </label>
+                       
+                        <input id="UnloadStart" style="width: 100px" type="text" formControlName="UnloadStart" >
+                        <input id="UnloadEnd" style="width: 100px"  type="text" formControlName="UnloadEnd" >
+                       
+                      </div>
+      
+                      <div class="Center">
+                          <button class="button " type="submit">Update</button>
+                          </div>
+                          <div>&nbsp;</div>
+      
+                      <div class="Center">
+      
+                         
+                         
+                          &nbsp;&nbsp;
+                          
+                          <button class="button" (click)="EndShift()">End Shift</button>
+                          
+                          </div>
+                          <div>&nbsp;</div>
+                  </form> 
+       </mat-tab>
+       <mat-tab label="5"> 
+        <form  [formGroup]="loadForm" (ngSubmit)="onSubmit(loadForm.value)">
+      
+            <div class="Center">
+                <label for="ScaleTagID">
+                    Scale Tag ID: 
+                </label>
+               
+                <input id="ScaleTagID"   type="text" formControlName="ScaleTagID" >
+               
+              </div>
+      
+            <div class="Center">
+                <label for="Weight">
+                    Weight: 
+                </label>
+               
+                <input id="Weight"   type="text" formControlName="Weight" >
+               
+              </div>
+        
+              <div class="Center">
+                  <label for="Material">
+                      Material: 
+                  </label>
+                 
+                  <input id="Material"   type="text" formControlName="Material" >
+                 
+                </div>
+      
+                <div class="Center">
+                    <label for="TimeArive">
+                        Time Arrive: 
+                    </label>
+                    <label for="TimeDepart">
+                        Time Depart: 
+                    </label>
+                  </div>
+      
+                  <div class="Center">
+                      <label for="Loading">
+                          Loading: 
+                      </label>
+                     
+                      <input id="LoadStart" style="width: 100px" type="text" formControlName="LoadStart" >
+                     
+                      <input id="LoadEnd" style="width: 100px" type="text" formControlName="LoadEnd" >
+                     
+                    </div>
+      
+                    <div class="Center">
+                        <label for="Unloading">
+                            Unloading: 
+                        </label>
+                       
+                        <input id="UnloadStart" style="width: 100px" type="text" formControlName="UnloadStart" >
+                        <input id="UnloadEnd" style="width: 100px"  type="text" formControlName="UnloadEnd" >
+                       
+                      </div>
+      
+                      <div class="Center">
+                          <button class="button " type="submit">Update</button>
+                          </div>
+                          <div>&nbsp;</div>
+      
+                      <div class="Center">
+      
+                         
+                         
+                          &nbsp;&nbsp;
+                          
+                          <button class="button" (click)="EndShift()">End Shift</button>
+                          
+                          </div>
+                          <div>&nbsp;</div>
+                  </form> 
+       </mat-tab>
+    </mat-tab-group>
+ 
+
+  <div>&nbsp;</div>
+
+<div class="Center">Driver Signature</div>
+<img src={{DriverSign}}>
+<div>&nbsp;</div>
+
+<div *ngIf="DriverSign" class="Center">Foreman Signature</div>
+
+
+<div class="Center">
+    <mat-card>
+<signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()">
+    
+</signature-pad>
+</mat-card>
+</div>
+
+<div class="Center"><button (click)="rewind()">undo</button></div>
+<div>&nbsp;</div>
+<div class="Center"><button (click)="clear()">clear</button></div>
+
+
+<div>&nbsp;</div>
+
+<div class="Center">
+    <button (click)="download()">
+      Downlaod pdf file
+    </button>
+</div>
+<div>&nbsp;</div><div>&nbsp;</div>

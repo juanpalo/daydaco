@@ -1,0 +1,76 @@
+
+<div *ngIf="afAuth.user | async as user; else showLogin2">
+    
+    <!--
+    <ul>
+        <li *ngFor="let item of items | async">
+           {{ item | json }}
+        </li>
+      </ul>
+
+    -->
+   
+    <div *ngIf="!paid">
+        <div class="Center">
+            you are using a test version
+        </div>
+        <div class="Center">
+            before you subscribe follow these two steps
+        </div>
+        <div class="Center">
+                    <img src="../../assets/step1.jpg" style="width:400px;height:500px;">
+                </div>
+                <div class="Center">
+                    <img src="../../assets/step2.jpg" style="width:400px;height:500px;">
+                </div>
+            <div class="Center">
+                now use the app to subscribe other wise will not work
+            </div>
+        <dd>  &nbsp;</dd>
+        <div class="Center">
+        <a href="https://truckproject-b9adc.firebaseapp.com/pay.html"> <button>subscribe</button> </a>
+        </div>
+    </div>
+
+
+    <div *ngIf="paid">
+
+    <div  class="Center">Signing Up As:</div>
+
+        <dl >
+            <dt class="Center">
+                <a [routerLink]="['/signup','broker']" >
+                 <button type="button" class="btn btn-primary btn-lg">Broker/Dispatcher</button>
+                </a>
+                </dt>
+            <dd>  &nbsp;</dd>
+            <dt class="Center">
+                    <a [routerLink]="['/signup','owner']" >
+                <button type="button" class="btn btn-primary btn-lg">Owner/Operator</button>
+            </a>
+            </dt>
+                    
+                <dd> &nbsp; </dd>
+             <dt class="Center">
+                    <a [routerLink]="['/signup','trucker']" >
+                 <button type="button" class="btn btn-primary btn-lg">Trucker/Driver</button>
+                </a>
+                </dt>
+                    
+                 <dd>  &nbsp;</dd>
+          </dl>
+
+        </div>
+    
+    </div>
+     <ng-template   #showLogin2>
+          <!-- <a [routerLink]="['/login']" class="button fancy-button"><i class="material-icons">account_circle</i>Sign In</a> -->
+          
+          <dl class="Center">
+          <button  (click)="login()">Login</button>
+        </dl>
+        </ng-template>
+        
+       
+
+       

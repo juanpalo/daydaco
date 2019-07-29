@@ -1,0 +1,77 @@
+
+<div class="Center">{{role}} Profile Page</div>
+
+<div>  &nbsp;</div>
+
+<div class="Center" *ngIf="info.DriverName">
+    <p>DriverName: {{info.DriverName}}</p>
+    </div>
+    
+    <div class="Center" *ngIf="info.Employer">
+        <p>Employer: {{info.Employer}}</p>
+        </div>
+        
+            <div class="Center" *ngIf="info.Phone">
+            <p>Phone: {{info.Phone}}</p>
+            </div>
+            
+                <div class="Center" *ngIf="info.Email">
+                <p>Email: {{info.Email}}</p>
+                </div>
+                
+                <div class="Center" *ngIf="info.Address">
+                <p>Address: {{info.Address}}</p>
+                </div>
+
+                <div class="Center" *ngIf="info.CompanyName">
+                    <p>CompanyName: {{info.CompanyName}}</p>
+                    </div>
+                    
+                    <div class="Center" *ngIf="info.DispatcherName">
+                        <p>DispatcherName: {{info.DispatcherName}}</p>
+                        </div>
+                        
+                            <div class="Center" *ngIf="info.CompanyPhone">
+                            <p>CompanyPhone: {{info.CompanyPhone}}</p>
+                            </div>
+                            
+                                <div class="Center" *ngIf="info.CompanyEmail">
+                                <p>CompanyEmail: {{info.CompanyEmail}}</p>
+                                </div>
+                                
+                                <div class="Center" *ngIf="info.CompanyAddress">
+                                <p>CompanyAddress: {{info.CompanyAddress}}</p>
+                                </div>
+    
+                                <div>  &nbsp;</div>
+
+
+        <div class="Center">
+        <a [routerLink]="['/signup',role]" >
+        <button type="button" class="btn btn-primary btn-lg" >Update Profile</button>
+        </a>
+        </div>
+
+        <div>  &nbsp;</div>
+
+    <div class="Center"  *ngIf="role=='owner'||role=='broker'">
+    <a [routerLink]="['/createJob',role]" >
+        <button type="button" class="btn btn-primary btn-lg">Create Jobs</button>
+       </a>
+    </div>
+
+    <div>  &nbsp;</div>
+
+    <div class="Center" >
+        <a [routerLink]="['/Jobs',company]" >
+            <button type="button" class="btn btn-primary btn-lg">Company Received Jobs</button>
+           </a>
+        </div>
+        <div>  &nbsp;</div>
+        <div class="Center">
+                <a [routerLink]="['/Ongoing']">
+                <button>Jobs you are working on</button>
+                </a>
+            
+        </div>
+       

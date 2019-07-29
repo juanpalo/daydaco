@@ -1,0 +1,95 @@
+
+<div class="Center"> {{title}} Create Job Page </div>
+
+<div>  &nbsp;</div>
+
+<div>  
+    <form  [formGroup]="JobForm" (ngSubmit)="onSubmit(JobForm.value)">
+     
+            <div class="Center">
+              <label for="Contractor">
+                Contractor: 
+              </label>
+              <input id="Contractor"   type="text" formControlName="Contractor"  required>
+            </div>
+           
+            <div class="Center">
+              <label for="Foreman">
+                Foreman:
+              </label>
+              <input id="Foreman"  type="text" formControlName="Foreman" required>
+            </div>
+           
+            <div class="Center">
+                    <label for="Phone">
+                        Phone:
+                    </label>
+                    <input id="Phone"  type="number" formControlName="Phone" required>
+                  </div>
+    
+                  <div class="Center">
+                        <label for="Email">
+                            Email:
+                        </label>
+                        <input id="Email"  type="email" formControlName="Email" required>
+                      </div>
+    
+                      <div class="Center">
+                        <label for="JobID">
+                            JobID:
+                        </label>
+                        <textarea id="JobID"  type="text" formControlName="JobID" required>
+                        </textarea>
+                        </div>
+
+                        <div class="Center">
+                          <label for="Times">
+                              Times:
+                          </label>
+                          <textarea id="Times"  type="text" formControlName="Times" required>
+                          </textarea>
+                          </div>
+
+                        <div class="Center">
+                          <label for="Job">
+                              Job:
+                          </label>
+                          <textarea id="Job"  type="text" formControlName="Job" required>
+                          </textarea>
+                          </div>
+
+                      <div class="Center">
+                        <label for="JobDate">
+                            JobDate:
+                        </label>
+                        <input id="JobDate"  type="date" formControlName="JobDate" required>
+                      </div>
+
+                      <div class="Center">
+                        <label for="ArriveTime">
+                            Arrive Time:
+                        </label>
+                        <input id="ArriveTime"  type="text" formControlName="ArriveTime" required>
+                      </div>
+
+                      <div class="Center">
+                            <label for="ArriveAt">
+                                Arrive At:
+                            </label>
+                            <textarea id="ArriveAt"  type="text" formControlName="ArriveAt" required>
+                            </textarea>
+                          </div>
+          
+                          <div class="Center">
+                            <label for="LoadAt">
+                                Load/Unload At:
+                            </label>
+                            <textarea id="LoadAt"  type="text" formControlName="LoadAt" required>
+                            </textarea>
+                          </div>
+
+            <div class="Center">
+              <button class="button " type="submit">Submit</button>
+             </div>
+            </form>
+          </div>
