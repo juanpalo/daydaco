@@ -1,15 +1,19 @@
-
+<!-- Test sub 1  -->
 <div class="Center"> {{title}} Create Job Page </div>
 
 <div>  &nbsp;</div>
 
 <div>  
+    
+    <!-- Test sub 2 -->
     <form  [formGroup]="JobForm" (ngSubmit)="onSubmit(JobForm.value)">
      
             <div class="Center">
               <label for="Contractor">
                 Contractor: 
               </label>
+              
+              <!-- Test sub 3 -->
               <input id="Contractor"   type="text" formControlName="Contractor"  required>
             </div>
            
@@ -17,6 +21,8 @@
               <label for="Foreman">
                 Foreman:
               </label>
+              
+              <!-- Test sub 4 -->
               <input id="Foreman"  type="text" formControlName="Foreman" required>
             </div>
            
@@ -24,6 +30,8 @@
                     <label for="Phone">
                         Phone:
                     </label>
+                    
+                    <!-- Test sub 5 -->
                     <input id="Phone"  type="number" formControlName="Phone" required>
                   </div>
     
@@ -31,6 +39,8 @@
                         <label for="Email">
                             Email:
                         </label>
+                        
+                        <!-- Test sub 6 -->
                         <input id="Email"  type="email" formControlName="Email" required>
                       </div>
     
@@ -38,6 +48,8 @@
                         <label for="JobID">
                             JobID:
                         </label>
+                        
+                        <!-- Test sub 7 -->
                         <textarea id="JobID"  type="text" formControlName="JobID" required>
                         </textarea>
                         </div>
@@ -46,6 +58,8 @@
                           <label for="Times">
                               Times:
                           </label>
+                          
+                          <!-- Test sub 8 -->
                           <textarea id="Times"  type="text" formControlName="Times" required>
                           </textarea>
                           </div>
@@ -54,6 +68,8 @@
                           <label for="Job">
                               Job:
                           </label>
+                          
+                          <!-- Test sub 9 -->
                           <textarea id="Job"  type="text" formControlName="Job" required>
                           </textarea>
                           </div>
@@ -62,6 +78,8 @@
                         <label for="JobDate">
                             JobDate:
                         </label>
+                        
+                        <!-- Test sub 10 -->
                         <input id="JobDate"  type="date" formControlName="JobDate" required>
                       </div>
 
@@ -69,6 +87,8 @@
                         <label for="ArriveTime">
                             Arrive Time:
                         </label>
+                        
+                        <!-- Test sub 11 -->
                         <input id="ArriveTime"  type="text" formControlName="ArriveTime" required>
                       </div>
 
@@ -76,6 +96,8 @@
                             <label for="ArriveAt">
                                 Arrive At:
                             </label>
+                            
+                            <!-- test sub 12 -->
                             <textarea id="ArriveAt"  type="text" formControlName="ArriveAt" required>
                             </textarea>
                           </div>
@@ -84,11 +106,15 @@
                             <label for="LoadAt">
                                 Load/Unload At:
                             </label>
+                            
+                            <!-- test sub 13 -->
                             <textarea id="LoadAt"  type="text" formControlName="LoadAt" required>
                             </textarea>
                           </div>
 
             <div class="Center">
+              
+              <!-- test sub 14 -->
               <button class="button " type="submit">Submit</button>
              </div>
             </form>
